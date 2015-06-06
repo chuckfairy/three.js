@@ -8,7 +8,7 @@ THREE.RaytracingRenderer = function ( parameters ) {
 	console.log( 'THREE.RaytracingRenderer', THREE.REVISION );
 
 	parameters = parameters || {};
-	
+
 	var scope = this;
 
 	var canvas = document.createElement( 'canvas' );
@@ -50,6 +50,8 @@ THREE.RaytracingRenderer = function ( parameters ) {
 		clearColor.set( color );
 
 	};
+
+	this.setPixelRatio = function () {};
 
 	this.setSize = function ( width, height ) {
 
@@ -461,7 +463,6 @@ THREE.RaytracingRenderer = function ( parameters ) {
 				if ( blockY >= canvasHeight ) {
 
 					scope.dispatchEvent( { type: "complete" } );
-
 					return;
 
 				}
